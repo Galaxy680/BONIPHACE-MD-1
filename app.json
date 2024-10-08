@@ -1,9 +1,9 @@
 {
-  "name":"BONIPHACE-MD UPDATE BY ME",
-  "description":"Best WhatsApp Bot Developed By Boniphace Tech Contact me 255716661569, Thank you for choose BONIPHACE-MD",
+  "name":"ALPHA-MD",
+  "description":"Best whatsapp bot developed by keithkeizzah",
   "keywords":["bot","node","baileys","whatsapp"],
-  "logo":"https://telegra.ph/file/5462ea7070b61eb790caa.jpg",
-  "repository":"https://github.com/boniphace478/BONIPHACE-MD",
+  "logo":"https://telegra.ph/file/0c351a67f1dffd1f34cf5.jpg",
+  "repository":"https://github.com/keithkeizzah/ALPHA-MD1",
   "succes_url":"/",
   "stack":"container",
   "env":{
@@ -29,37 +29,37 @@
      {
       "description":"Other user can't use your bot in pm (type yes to active or no to deactive ; don't write in capital letter)",
       "value":"no",
-      "required":true
+      "required":false
     }
     ,
     "BOT_NAME" : {
        
       "description":"put A name for your bot",
-      "value":"BONIPHACE-MD",
+      "value":"𝐀𝐋𝐏𝐇𝐀-𝐌𝐃",
       "required":false
 
     } ,
      "BOT_MENU_LINKS" : {
     
       "description":"add one or many link for your bot menu  ; eg : url1,url2,url3.....",
-      "value":"https://telegra.ph/file/3dd4203db276e0fb61957.jpg",
+      "value":"https://telegra.ph/file/0c351a67f1dffd1f34cf5.jpg",
       "required":false
        
      },
     "PUBLIC_MODE":
     {
       "description":"type yes to put your bot on public mode or no to put it on private mod",
-      "value":"no",
-      "required": true 
+      "value":"yes",
+      "required":false
     }
 	,
-    "HEROKU_APY_KEY": {
+    "HEROKU_API_KEY": {
     "description": "insert your heroku api-key (this is optionnal)",
-     "required" :true
+     "required" :false
     },
   "HEROKU_APP_NAME": {
     "description": "insert your heroku APP NAME (this is optionnal)",
-     "required" :true
+     "required" :false
     }  
 	  ,
     "SESSION_ID":
@@ -74,15 +74,14 @@
     
     "desc": "Your Name",
     "required": false,
-    "value": "BONIPHACE TECH👑"
+    "value": "𝐊𝐞𝐢𝐭𝐡"
   },
     "NUMERO_OWNER":
   {
     
     "desc": "Your number , dont put '+' and put you area code(exemple of togo '228')",
     "required":false,
-    "value": "255716661569"
-	  
+    "value": "254796299159"
   },
     "WARN_COUNT":
   {
@@ -94,30 +93,41 @@
   {
     "description": "if you don't want startting-bot-message put no else put yes",
     "required": true,
-    "value": "no"
+    "value": "yes"
   },
   "PRESENCE":{
     "description":"Mark your presence: 1 to indicate that you are online even if you are not. 2 to indicate that you are currently typing a message. 3 to indicate that you are currently recording an audio. Or leave the field blank to indicate your real state.",
-    "value":"1",
-    "required": true 
+    "value":"",
+    "required": false
   },
   "ANTI_DELETE_MESSAGE" : {
     "description": "if you want to enable anti delete message put yes else put no",
     "value": "yes",
-    "required": true 
+        "required": false
   }
   },
 
-  "formation": {
-		"worker": {
-			"quantity": 1,
-			"size": "basic"
-		}
-	},
-
-  "addons":[
+    "buildpacks": [
     {
-      "plan":"heroku-postgresql"
+      "url": "heroku/nodejs"
+    },
+
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    },
+    {
+      "url": "https://github.com/clhuang/heroku-buildpack-webp-binaries.git"
+    }
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "standard-2x"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:essential-0"
     }
   ]
-  }
+}
