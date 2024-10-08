@@ -76,7 +76,7 @@ use prefix {/}  example {/search dada}
 });
 
 zokou({
-  nomCom: "vido",
+  nomCom: "video",
   categorie: "Search",
   reaction: "🎥"
 }, async (origineMessage, zk, commandeOptions) => {
